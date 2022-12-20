@@ -39,7 +39,7 @@ namespace SnakeGame
         private void Draw()
         {
             field.Snake.Draw();
-            Thread.Sleep(600);
+            Thread.Sleep(400);
             field.Snake.Clear();
         }
 

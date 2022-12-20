@@ -209,7 +209,7 @@ namespace SnakeGame
             Cells = new Cell[height / Cell.CellSize, width / Cell.CellSize];
             Snake = new Snake(7, 3);
             FillField();
-            //AddSnake();
+
             GenFood();
             DrawFood();
         }
@@ -225,14 +225,6 @@ namespace SnakeGame
                 }
             }
         }
-
-        //private void AddSnake()
-        //{
-        //    for (int h = 0; h < Snake.Body.Count; h++)
-        //    {
-        //        Cells[Snake.Body[h].X, Snake.Body[h].Y] = Snake.Body[h];
-        //    }
-        //}
 
         internal void DrawBorders()
         {

@@ -25,14 +25,12 @@ namespace SnakeGame
         }
         internal void Clear()
         {
-            Head?.Clear();
-            foreach (var cell in Body)
-                cell.Clear();
+            Body.Peek().Clear();
         }
 
         internal void Move(Field field, ref bool isRunning, bool eat = false)
         {
-            Direction direction = ReadMovement(currentDirection);
+            Direction direction = ReadMovement();
 
             Body.Enqueue(new Cell(Head.X, Head.Y, CellType.SnakeBody, ConsoleColor.Yellow));
             if (!eat)
@@ -48,7 +46,7 @@ namespace SnakeGame
             };
         }
 
-        static Direction ReadMovement(Direction currentDirection)
+        internal Direction ReadMovement()
         {
             if (!Console.KeyAvailable)
                 return currentDirection;
